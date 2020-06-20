@@ -2,6 +2,7 @@ package com.batch.actuator;
 
 import com.batch.processor.FlowProcessor;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
+import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
@@ -53,6 +54,7 @@ public class FlowBuilder {
     }
 
     public FlowProcessor firstProcessor(){
+        Assert.notEmpty(flowProcessorList,"flowProcessorList is empty");
         return flowProcessorList.get(0);
     }
 
