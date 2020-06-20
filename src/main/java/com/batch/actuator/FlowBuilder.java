@@ -43,7 +43,7 @@ public class FlowBuilder {
         return flowDataPartition;
     }
 
-    public FlowProcessor next(FlowProcessor flowProcessor){
+    public FlowProcessor nextProcessor(FlowProcessor flowProcessor){
         Optional<FlowProcessor> first = flowProcessorList.stream().filter(v -> v.getFlowSeq() >= flowProcessor.getFlowSeq()
                 && !StringUtils.startsWithIgnoreCase(v.getName(), flowProcessor.getName())).findFirst();
         if (first.isPresent()) {

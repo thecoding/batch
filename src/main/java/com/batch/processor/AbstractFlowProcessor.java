@@ -17,7 +17,7 @@ public abstract class AbstractFlowProcessor implements FlowProcessor{
     
     private void next(){
         FlowBuilder flowBuilder = FlowContext.getInstance().get(FlowBuilder.class);
-        FlowProcessor nextFlowProcessor = flowBuilder.next(this);
+        FlowProcessor nextFlowProcessor = flowBuilder.nextProcessor(this);
         if (nextFlowProcessor != null) {
             nextFlowProcessor.execute();
         }
